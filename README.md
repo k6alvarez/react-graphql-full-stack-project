@@ -3,7 +3,7 @@
 App Architecture needed for deployment.
 
 1. Prisma Server
-
+- `prisma init` and follow prompts. Be sure to set up .env 
 - Mysql server managed over at prisma.com
 - `npm run deploy -- -n` to create new prisma service.
 
