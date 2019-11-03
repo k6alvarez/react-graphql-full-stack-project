@@ -2,6 +2,9 @@
 
 ## How to setup app for development
 
+Requirements:
+- I use Prima for my graphQL server. You will need to set up a free dev Prisma account.
+
 ### Prisma (backend)
 
 - In a terminal navigate to the `/backend` directory
@@ -9,7 +12,7 @@
 - Delete any existing files named `prisma.yml` and `datamodel.prisma`
 - Create Prisma server `prisma init` and select `Demo Server`
 - Follow prompts to select server region, app name, app stage (dev or prod), and choose `Don't Generate` when asked about the programming language for the generated Prisma client
-- Replace the endpoint url from the generated `prisma.yml` file and add it as the value for `PRISMA_ENDPOINT` in `.env` file.
+- Replace the endpoint url from the generated `prisma.yml` file and add it as the value for `PRISMA_ENDPOINT` in a new `.env` file.
 - Copy and Paste the `prisma.yml.sample` to `prisma.yml`
 - Copy and Paste the `datamodel.prisma.sample` to `datamodel.prisma` to generate latest schema
 - Deploy to prisma with `npm run deploy`
