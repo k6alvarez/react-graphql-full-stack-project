@@ -30,10 +30,16 @@ Before you start:
 ### Deployment to Heroku
 - We run a single repo with two apps.
 - `heroku login`
-- `apps:create my-app-name-prod`
-- we use heroku remote to deploy backend and frontend
-- `git remote add heroku-backend https://git.heroku.com/my-app`
+- You should get back a URL to your heroku instance along with a git url for deploying your frontend
+- we use heroku remote to seperately deploy backend and frontend directories.
+- `heroku apps:create my-app-name-prod`
+- `git remote add heroku-backend https://git.heroku.com/my-app-name-prod`
 - `git subtree push --prefix backend heroku-backend master`
-- same for frontend
+- Now do the same steps for frontend
+- `heroku apps:create my-app-frontend`
+- `git remote add heroku-frontend https://git.heroku.com/my-app-frontend`
+- `git subtree push --prefix frontend heroku-frontend master`
+
+Congrats! You should have everything deployed, now just go into Heroku and configure your `.env` variables.
 
 Deployment is set up with Heroku thought the use of git subtrees. One heroku instance for backend and one for frontend.
