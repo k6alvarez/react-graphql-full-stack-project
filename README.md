@@ -27,7 +27,17 @@ Before you start:
 - Your app should be running at `http://localhost:7777/` and you should see the UI.
 - Now you can start building your own app.
 
-### Deployment to Heroku
+### Deployment to Prisma and Heroku
+- Click on Server -> Add Server from Prisma dashboard
+- Fill in name and description and select Create A Server
+- Create New Database and connect to Heroku to finish setting up database
+- Now you can select on Set Up Server and again use Heroku
+- Next we need to deploy our heroku server to a prisma service
+- `npm run deploy -- -n` and select your newly created server from the list
+- Set stage to `prod`
+- This will modify your `prisma.yml` file with the production endpoint you'll need for Heroku, make sure to undo that change so that that app will use the `env` variable instead.
+
+### Pushing to Heroku with subtrees
 - We run a single repo with two apps.
 - `heroku login`
 - You should get back a URL to your heroku instance along with a git url for deploying your frontend
@@ -40,6 +50,4 @@ Before you start:
 - `git remote add heroku-frontend https://git.heroku.com/my-app-frontend`
 - `git subtree push --prefix frontend heroku-frontend master`
 
-Congrats! You should have everything deployed, now just go into Heroku and configure your `.env` variables.
-
-Deployment is set up with Heroku thought the use of git subtrees. One heroku instance for backend and one for frontend.
+Now go into Heroku and set up your `env` variables.
