@@ -6,7 +6,7 @@ Before you start:
 - I use Prisma for my graphQL server. You will need to set up a free dev Prisma account.
 - Update the details of both `package.json` files to match your app name and description. Along with running `npm install` to update `package.lock` file details.
 
-### Prisma (backend)
+### Prisma (backend mysql)
 
 - In a terminal navigate to the `/backend` directory
 - Login to Prisma (database) `prisma login`
@@ -20,7 +20,12 @@ Before you start:
 - Deploy to prisma with `npm run deploy`
 - `npm run dev`
 
-### React Frontend
+### Yoga GraphQL Server (mutation and query resolvers)
+- On the frontend we use Apollo client to query our Yoga GraphQL Server
+- The Yoga GraphQL Server connects to our Prisma database to pull the data back and forth.
+- This is done in `db.js` file using prisma-binding.
+
+### React (frontend)
 
 - In a terminal navigate to the `/frontend` directory
 - Run `npm install && npm run dev`
