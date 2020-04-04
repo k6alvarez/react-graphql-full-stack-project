@@ -48,7 +48,8 @@ Before you start:
 - You should get back a URL to your heroku instance along with a git url for deploying your frontend
 - we use heroku remote to seperately deploy backend and frontend directories.
 - `heroku apps:create my-app-name-prod`
-- `git remote add heroku-backend https://git.heroku.com/my-app-name-prod`
+- `git remote add heroku-backend https://git.heroku.com/my-app-name-prod.git`
+- `cd ../`
 - `git subtree push --prefix backend heroku-backend master`
 - Now do the same steps for frontend
 - `heroku apps:create my-app-frontend`
